@@ -1,0 +1,36 @@
+{
+  "user": [
+    {
+      "id": "51ef",
+      "fname": "Ajay",
+      "lname": "Kumar",
+      "email": "ajaykumar286458@gmail.com",
+      "password": "Ajay@4321",
+      "cpassword": "Ajay@4321"
+    },
+    {
+      "id": "b7bd",
+      "fname": "Ajay",
+      "lname": "Kumar",
+      "email": "ajaykumar286458@gmail.com",
+      "password": "Ajay@4321",
+      "cpassword": "Ajay@4321"
+    },
+    {
+      "id": "e4d7",
+      "fname": "Ajay",
+      "lname": "Kumar",
+      "email": "ajaykumar286458@gmail.com",
+      "password": "Ajay@4321",
+      "cpassword": "Ajay@4321"
+    },
+    {
+      "id": "dcc5",
+      "fname": "Hariom",
+      "lname": "Kumar",
+      "email": "hariomkr638@gmail.com",
+      "password": "Hari@4321",
+      "cpassword": "Hari@4321"
+    }
+  ]
+}
