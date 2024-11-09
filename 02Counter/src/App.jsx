@@ -1,10 +1,10 @@
 // In this file we learn about useState and how to use it in react that is called hooks.
 import { useState } from "react";
 import "./App.css";
+import FunctionWise from "./FunctionWise";
 
 function App() {
   let [counter, setCounter] = useState(7)
-
   const addValue = () => {
     counter = counter + 1;
     setCounter(counter)
@@ -12,6 +12,7 @@ function App() {
   const remove= () =>{
     setCounter(counter - 1)
   }
+
   return (
     <>
       <h1>Welcome India</h1>
@@ -21,6 +22,8 @@ function App() {
       <br />
       <button onClick={remove}>Subtract Value {counter} </button>
       <p>footer: {counter}</p>
+
+      <FunctionWise />
     </>
   );
 }
