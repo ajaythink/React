@@ -27,9 +27,10 @@ function App() {
       <div
         className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
         style={{
-          backgroundImage: `url('https://images.pexels.com/photos/28995805/pexels-photo-28995805/free-photo-of-misty-autumn-landscape-in-norwegian-forest.jpeg')`,
+          backgroundImage: `url('https://images.pexels.com/photos/29510214/pexels-photo-29510214/free-photo-of-dramatic-night-lightning-over-urban-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')`,
         }}
       >
+        <h1 className="text-white text-5xl">Currency Convetor</h1>
         <div className="w-full ">
           <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
             <form
