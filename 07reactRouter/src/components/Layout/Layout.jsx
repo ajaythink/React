@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 function Layout() {
   return (
     <>
-      <div>Layout</div>
+      {/* <div>Layout</div> */}
       <Header />
       <Outlet />
       <Footer />
