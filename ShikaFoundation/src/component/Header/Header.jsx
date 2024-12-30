@@ -3,23 +3,24 @@ import logo from "../../assets/logo.png";
 // ShikaFoundation/src/component/Header/Header.jsx
 export default function Header() {
   return (
-    <header className="shadow sticky z-50 top-0">
-      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
-        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+    <header className="bg-gray-200 shadow sticky z-50 top-0">
+      <nav className=" bg-transparent border-gray-200 px-4 lg:px-6 py-2.5">
+        {/* <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl"> */}
+        <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-2xl">
           <Link to="/" className="flex items-center">
             <img
               src={logo}
               alt="Org logo"
-              className="mr-5 "
+              className="mr-5 rounded-lg scale-105"  
               style={{ height: "5rem" }}
             />
           </Link>
-          <div className="hidden lg:flex items-center lg:order-2">
+          <div className=" lg:flex items-center lg:order-2">
             <Link
               to="#"
-              className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none"
+              className="text-gray-800 hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 focus:outline-none hidden lg:block"
             >
-              Log in
+              Log In
             </Link>
             <Link
               to="#"
@@ -145,6 +146,7 @@ export default function Header() {
             </ul>
           </div>
         </div>
+        <i className="bx bx-menu text-5xl cursor-pointer block lg:hidden"></i>
       </nav>
       {/* <p>Shika Foundation Header &copy; 2021</p> */}
     </header>
