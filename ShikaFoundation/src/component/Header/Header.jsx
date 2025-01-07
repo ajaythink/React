@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
+import { useState } from "react";
 import logo from "../../assets/logo.png";
+// import MobileNav from "./MobileNav";
 // ShikaFoundation/src/component/Header/Header.jsx
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState();
   return (
     <header className="bg-gray-200 shadow sticky z-50 top-0">
       <nav className=" bg-transparent border-gray-200 px-4 lg:px-6 py-2.5">
@@ -11,7 +14,7 @@ export default function Header() {
             <img
               src={logo}
               alt="Org logo"
-              className="mr-5 rounded-lg scale-105"  
+              className="mr-5 rounded-lg scale-105"
               style={{ height: "5rem" }}
             />
           </Link>
@@ -146,7 +149,31 @@ export default function Header() {
             </ul>
           </div>
         </div>
-        <i className="bx bx-menu text-5xl cursor-pointer block lg:hidden"></i>
+        {/* <i
+          className="bx bx-menu text-5xl cursor-pointer block md:hidden"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <MobileNav />
+        </i>
+        <div
+          className={`absolute md:hidden top-24 left-0 w-full bg-white flex flex-col items-center gap-6 font-semibold text-lg transform transition-transform ${
+            isMenuOpen ? "opacity-100" : "opacity-0"
+          } `}
+          style={{ transition: "transform 0.3s ease, opacity 0.3s ease" }}
+        >
+          <li className="list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all cursor-pointer">
+            Home
+          </li>
+          <li className="list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all cursor-pointer">
+            Home
+          </li>
+          <li className="list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all cursor-pointer">
+            Home
+          </li>
+          <li className="list-none w-full text-center p-4 hover:bg-sky-400 hover:text-white transition-all cursor-pointer">
+            Home
+          </li>
+        </div> */}
       </nav>
       {/* <p>Shika Foundation Header &copy; 2021</p> */}
     </header>
