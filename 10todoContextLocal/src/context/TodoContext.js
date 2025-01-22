@@ -4,9 +4,15 @@ import { createContext, useContext } from "react";
 // Create a context for the todo list items and export it
 // createContext() creates a context object that we can use to share data between components.
 export const TodoContext = createContext({
-  todos: [],
+  todos: [
+    // {
+    //   id: 1,
+    //   todo: "Learn React",
+    //   completed: false,
+    // }
+  ],
   addTodo: (todo) => {},
-  updatedTodo: (id, todo) => {},
+  updateTodo: (id, todo) => {},
   deleteTodo: (id) => {},
   toggleComplete: (id) => {},
 

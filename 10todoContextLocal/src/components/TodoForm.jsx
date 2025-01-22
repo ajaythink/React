@@ -7,11 +7,13 @@ function TodoForm() {
 
     const add=(e) =>{
       e.preventDefault()
+
       if(!todo) return
 
-      addTodo({todo, completed: fales})
-      setTodo("")
-      
+    //   addTodo({id: Date.now(), todo:todo, completed: false})
+
+      addTodo({todo, completed: false})
+      setTodo("")    
 
     }
 
@@ -32,3 +34,4 @@ function TodoForm() {
 }
 
 export default TodoForm;
+
