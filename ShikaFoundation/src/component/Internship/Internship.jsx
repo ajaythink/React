@@ -1,14 +1,10 @@
-
 import * as React from "react";
 import PropTypes from "prop-types";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
-// MemberVivek.png i want to use this image , this location in public folder
 
-// import  Label   from '@headlessui/react'
-
-function Member(props) {
+function Internship(props) {
   const { children, value, index, ...other } = props;
 
   return (
@@ -24,7 +20,7 @@ function Member(props) {
   );
 }
 
-Member.propTypes = {
+Internship.propTypes = {
   children: PropTypes.node,
   index: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
@@ -56,38 +52,38 @@ export default function BasicTabs() {
             onChange={handleChange}
             aria-label="basic tabs example"
           >
-            <Tab label="Member verification" {...a11yProps(0)} />
-            <Tab label="Our Member" {...a11yProps(1)} />
-            <Tab label="Registration Form" {...a11yProps(2)} />
+            <Tab label="Internship verification" {...a11yProps(0)} />
+            <Tab label="Our Internship" {...a11yProps(1)} />
+            <Tab label="Apply Internship" {...a11yProps(2)} />
           </Tabs>
         </Box>
-        <Member value={value} index={0}>
-          <MemberVerification />
-        </Member>
-        <Member value={value} index={1}>
-          <OurMember />
-        </Member>
-        <Member value={value} index={2}>
+        <Internship value={value} index={0}>
+          <InternshipVerification />
+        </Internship>
+        <Internship value={value} index={1}>
+          <OurInternship />
+        </Internship>
+        <Internship value={value} index={2}>
           <RegistrationForm />
-        </Member>
+        </Internship>
       </Box>
     </>
   );
 }
 
-const MemberVerification = () => {
+const InternshipVerification = () => {
   return (
     <>
       <div>
         <div className="mx-auto mt-4 max-w-xl sm:mt-10 border p-5 rounded-xl">
           <h2 className="uppercase text-center text-3xl text-bold pb-5 italic font-bold text-green-500">
-            Member verification
+            Internship verification
           </h2>
           <label
-            htmlFor="member id"
+            htmlFor="Volunteer id"
             className="block text-sm/6 font-semibold text-gray-900"
           >
-            Member ID
+            Internship ID
           </label>
           <div className="mt-2.5">
             <input
@@ -123,62 +119,116 @@ const MemberVerification = () => {
     </>
   );
 };
-export { MemberVerification };
+export { InternshipVerification };
 
-import PersonIcon from "@mui/icons-material/Person";
- 
-const OurMember = () => {
+// import PersonIcon from "@mui/icons-material/Person";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import MoneyIcon from "@mui/icons-material/Money";
+const OurInternship = () => {
   return (
     <>
       <div>
         <h1 className="uppercase text-center text-3xl text-bold pb-5 italic font-bold text-green-500">
-          Our Member
+          Our Internship
         </h1>
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 ">
-          <div className="w-50 h-60  sm:w-60 sm:h-70 ">
-            <div className="w-50 h-60 border text-center">
-              {/* <img src="#" alt="person" /> */}
-              <PersonIcon sx={{ fontSize: 200 }} />
-            </div>
-            <p className="font-semibold text-center text-xl">Ajay Kumar</p>
-            <p className="text-center ">Member</p>
-          </div>
-          <div className="w-60 h-70  ">
-            <div className="w-60 h-60 border text-center">
-              <img
-                src="/MemberVivek.png"
-                alt="Ajay Kumar"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <p className="font-semibold text-center text-xl">Ajay Kumar</p>
-            <p className="text-center ">Member</p>
-          </div>
-          <div className="w-60 h-70  ">
-            <div className="w-60 h-60 border text-center">
-              <img
-                src="/MemberVivek.png"
-                alt="Ajay Kumar"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <p className="font-semibold text-center text-xl">Ajay Kumar</p>
-            <p className="text-center ">Member</p>
-          </div>
-          <div className="w-60 h-70  ">
-            <div className="w-60 h-60 border text-center">
-              {/* <img src="#" alt="person" /> */}
-              <PersonIcon sx={{ fontSize: 200 }} />
-            </div>
-            <p className="font-semibold text-center text-xl">Ajay Kumar</p>
-            <p className="text-center ">Member</p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-2 sm:px-10 md:px-20 lg:px-32">
+          {/* inside this div i will write the content of our internship Internship name, duration, stipend, location, and other details */}
+          <InternshipCard />
+          <InternshipCard />
+          <InternshipCard />
+          <InternshipCard />
+          <InternshipCard />
+
+          <div></div>
         </div>
       </div>
     </>
   );
 };
-export { OurMember };
+export { OurInternship };
+const IntershipCardData = [
+  {
+    id: 1,
+    title: "Software Testing",
+    duration: "3 months",
+    stipend: "$500/month",
+    location: "Remote",
+    type: "Internship",
+    company: "Shika Foundation",
+    start: "2021-10-10",
+    end: "2021-12-10",
+    
+  },
+  {
+    id: 2,
+    title: "Web Development",
+    duration: "6 months",
+    stipend: "$1000/month",
+    location: "Remote",
+    type: "Internship",
+    company: "Shika Foundation",
+    posted: "2021-10-10",
+    applyby: "2021-12-10",
+    joinning: "Immediately",
+    aboutinternship: "This is a software testing internship",
+  },
+  {
+    id: 3,
+    title: "Backend Development",
+    duration: "6 months",
+    stipend: "unpaid",
+    location: "Remote",
+    type: "Internship",
+    company: "Shika Foundation",
+    start: "2021-10-10",
+    end: "2021-12-10",
+  },
+];
+
+const InternshipCard = () => {
+  return (
+    <>
+      {IntershipCardData.map((data) => (
+        <div key={data.id}>
+          <div className="border p-5 rounded-xl max-w-sm">
+            <div className="flex flex-col justify-between h-full">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-800">
+                  {data.title}
+                </h2>
+                <p className="text-lg text-gray-600">{data.company}</p>
+                <div className="flex items-center gap-2 pt-3">
+                  <MoneyIcon />
+                  <span className="text-lg text-gray-600">{data.stipend}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <LocationOnIcon />
+                  <span className="text-lg text-gray-600">{data.location}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CalendarMonthIcon />
+                  <span className="text-lg text-gray-600">{data.duration}</span>
+                </div>
+              </div>
+              <div className="flex justify-between items-center pt-4">
+                <p className="text-lg text-gray-600 bg-green-50 rounded-lg px-2">{data.type}</p>
+                <a href="#">
+                  <button className="text-green-800 flex items-center">
+                    View details <KeyboardArrowRightIcon />
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </>
+  );
+};
+
+export { InternshipCard };
 
 const RegistrationForm = () => {
   return (
@@ -186,7 +236,7 @@ const RegistrationForm = () => {
       <div>
         <div>
           <h1 className="uppercase text-center text-3xl text-bold pb-5 italic font-bold text-green-500">
-            Registration Form
+            Apply Internship
           </h1>
           <form action="#" method="post">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 px-2 sm:px-10 md:px-20 lg:px-32">

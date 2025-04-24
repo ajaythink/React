@@ -1,13 +1,13 @@
 import { Carousel, IconButton } from "@material-tailwind/react";
-import banner1 from "../../assets/HomeBanner/Banner1-scaled.webp";
+// import banner1 from "../../assets/HomeBanner/Banner1-scaled.webp";
+// import {IconButton } from "@material-tailwind/react";/
 
-export function HCarousel() {
+function HCarousel({ images }) {
   return (
     <Carousel
-      // className="rounded-xl"
-      autoplay={true} // Enable autoplay
-      autoplayDelay={3000} // Set autoplay delay to 3000ms (3 seconds)
-      loop={true} // Enable infinite looping
+      autoplay={true}
+      autoplayDelay={3000}
+      loop={true}
       prevArrow={({ handlePrev }) => (
         <IconButton
           variant="text"
@@ -57,35 +57,28 @@ export function HCarousel() {
         </IconButton>
       )}
     >
-      <div>
-        <img
-          src={banner1}
-          alt="image 2"
-          className="w-full h-[200px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 py-6 sm:py-8 md:py-10">
-          <h1 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2">
-            Study in Dubai
-          </h1>
-          <a
-            className="bg-yellow-100 px-4 sm:px-6 py-2 rounded text-xs sm:text-base hover:bg-yellow-500 transition text-black font-bold"  
-            href="#"
-          >
-            Donate Now
-          </a>
+      {images.map((image, index) => (
+        <div key={index} className="relative">
+          <img
+            src={image}
+            alt={`slide ${index}`}
+            className="w-full h-[200px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 py-6 sm:py-8 md:py-10">
+            {/* <h1 className="text-lg sm:text-2xl md:text-4xl lg:text-5xl font-bold mb-2">
+              Study in Dubai
+            </h1> */}
+            <a
+              className="bg-yellow-100 px-4 sm:px-6 py-2 rounded text-xs sm:text-base hover:bg-yellow-500 transition text-black font-bold"
+              href="#"
+            >
+              Donate Now
+            </a>
+          </div>
         </div>
-      </div>
-
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="w-full h-[200px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"
-        alt="image 2"
-        className="w-full h-[200px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
-      />
+      ))}
     </Carousel>
   );
 }
+
+export default HCarousel;
